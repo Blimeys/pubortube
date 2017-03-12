@@ -1,0 +1,422 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"geol",
+				"geolocationSvc"
+			],
+			[
+				"location",
+				"locationResults"
+			],
+			[
+				"locatio",
+				"locationResults"
+			],
+			[
+				"loca",
+				"locationResults"
+			],
+			[
+				"$s",
+				"$scope\tAngularJS"
+			],
+			[
+				"last",
+				"lastPartial"
+			],
+			[
+				"ur",
+				"urlMaker"
+			],
+			[
+				"l",
+				"left"
+			],
+			[
+				"radius",
+				"radiusSettings"
+			],
+			[
+				"sta",
+				"stationFactory"
+			],
+			[
+				"locat",
+				"locationFactory"
+			],
+			[
+				"googlemap",
+				"googleMapApiUrlLeft"
+			],
+			[
+				"goo",
+				"googleMapApiUrlComplete"
+			],
+			[
+				"goog",
+				"googleMapApiUrlLeft"
+			],
+			[
+				"url",
+				"urlGoogleQueryComplete"
+			],
+			[
+				"map",
+				"map_key"
+			],
+			[
+				"radiu",
+				"radiusSettings"
+			],
+			[
+				"gogle",
+				"googleMapApiUrl"
+			],
+			[
+				"find",
+				"findNearestStation"
+			],
+			[
+				"$http",
+				"$http\tAngularJS"
+			],
+			[
+				"rad",
+				"radiusSettings"
+			],
+			[
+				"ma",
+				"googleMapApiUrl"
+			],
+			[
+				"lo",
+				"locationFactory"
+			],
+			[
+				"google",
+				"googleApiData"
+			],
+			[
+				"st",
+				"stationsUrl"
+			],
+			[
+				"bl",
+				"blogapp"
+			],
+			[
+				"html",
+				"html5\tSimple HTML5 Boilerplate"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"http",
+				"$http\tAngularJS"
+			],
+			[
+				"ht",
+				"htmlGenerator"
+			],
+			[
+				"use",
+				"userOnline"
+			],
+			[
+				"usern",
+				"userNames"
+			],
+			[
+				"u",
+				"userID"
+			],
+			[
+				"get",
+				"getJSON"
+			],
+			[
+				"user",
+				"userUrl"
+			],
+			[
+				"statu",
+				"statusTwitch"
+			],
+			[
+				"twit",
+				"twitchData"
+			],
+			[
+				"offli",
+				"offlineData"
+			],
+			[
+				"off",
+				"offlineData"
+			],
+			[
+				"curre",
+				"currentQuote"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"Post",
+				"PostForm"
+			],
+			[
+				"Pos",
+				"PostAdmin"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 372.0,
+		"last_filter": "Package Control: in",
+		"selected_items":
+		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 340.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/jean/projects/pubtube"
+	],
+	"file_history":
+	[
+		"/home/jean/projects/beerortube/index.html",
+		"/home/jean/projects/beerortube/scripts/controller.js",
+		"/home/jean/projects/beerortube/beer.js",
+		"/home/jean/projects/beerortube/package.json",
+		"/home/jean/projects/beerortube/TODO.ms",
+		"/home/jean/projects/beerortube/scripts/ngGeolocation.min.js",
+		"/home/jean/projects/beerortube/controller.js",
+		"/home/jean/projects/beerortube/node_modules/beer.js",
+		"/home/jean/projects/mongoTest/test/blogapp.js",
+		"/home/jean/projects/mongoTest/test/index.html",
+		"/home/jean/projects/mongoTest/test/server.js",
+		"/home/jean/projects/mongoTest/test/blog/blogpost.json",
+		"/home/jean/Desktop/angular/node/app/controller/controller.js",
+		"/home/jean/Desktop/angular/node/app/index.html",
+		"/home/jean/Desktop/angular/node/app/app.js",
+		"/home/jean/Desktop/angular/helloWorld/app.js",
+		"/home/jean/Desktop/angular/helloWorld/index.html",
+		"/home/jean/Desktop/angular/helloWorld/controller.js",
+		"/home/jean/Desktop/angular/weather/style.css",
+		"/home/jean/Desktop/angular/weather/index.html",
+		"/home/jean/Desktop/angular/weather/greeting.html",
+		"/home/jean/Desktop/angular/weather/controller.js",
+		"/home/jean/Desktop/angular/weather/service.js",
+		"/home/jean/Desktop/angular/weather/app.js",
+		"/home/jean/Desktop/angular/weather/untitled",
+		"/home/jean/Desktop/angular/app.js",
+		"/home/jean/Desktop/angular/controller.js",
+		"/home/jean/Desktop/angular/style.css",
+		"/home/jean/Desktop/angular/greeting.html",
+		"/home/jean/Desktop/angular/index.html",
+		"/home/jean/.config/sublime-text-3/Packages/TypeScript/Preferences.sublime-settings",
+		"/home/jean/Desktop/FreeCodeCamp/WeatherAngular/weatherAngular/weather/index.html",
+		"/home/jean/Desktop/FreeCodeCamp/WeatherAngular/weatherAngular/weather/findme.html",
+		"/home/jean/Desktop/FreeCodeCamp/WeatherAngular/weatherAngular/weather/mainController.js",
+		"/home/jean/Desktop/FreeCodeCamp/WeatherAngular/weatherAngular/index.html",
+		"/home/jean/Desktop/FreeCodeCamp/WeatherAngular/weatherAngular/controllers/mainController.js",
+		"/home/jean/Desktop/FreeCodeCamp/WeatherAngular/main.js",
+		"/home/jean/Desktop/FreeCodeCamp/WeatherAngular/index.html",
+		"/angular.js",
+		"/home/jean/Desktop/label/webplatform-samples/webspeechdemo/webspeechdemo.html",
+		"/home/jean/thinker/app.js",
+		"/home/jean/thinker/index.html",
+		"/home/jean/Desktop/Crud/index.html",
+		"/home/jean/Desktop/tris.py",
+		"/home/jean/Desktop/Crud/server.js",
+		"/home/jean/Desktop/railsbridge/test_app/Gemfile",
+		"/home/jean/Desktop/railsbridge/test_app/config/routes.rb",
+		"/home/jean/Desktop/FreeCodeCamp/QuoteMachine/css.css",
+		"/home/jean/Desktop/FreeCodeCamp/QuoteMachine/stuff.js",
+		"/home/jean/Desktop/FreeCodeCamp/QuoteMachine/javascript.js",
+		"/home/jean/Desktop/FreeCodeCamp/QuoteMachine/index.html",
+		"/home/jean/Desktop/trydjango19/SRC/trydjango19/urls.py",
+		"/home/jean/Desktop/trydjango19/SRC/posts/forms.py",
+		"/home/jean/Desktop/trydjango19/SRC/posts/urls.py",
+		"/home/jean/Desktop/trydjango19/SRC/templates/index.html",
+		"/home/jean/Desktop/trydjango19/SRC/posts/models.py",
+		"/home/jean/Desktop/trydjango19/SRC/templates/post_detail.html",
+		"/home/jean/Desktop/trydjango19/SRC/templates/post_form.html",
+		"/home/jean/Desktop/trydjango19/SRC/posts/views.py",
+		"/home/jean/Desktop/trydjango19/SRC/trydjango19/settings.py",
+		"/home/jean/Desktop/trydjango19/SRC/crud.md",
+		"/home/jean/Desktop/trydjango19/SRC/posts/admin.py"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"FFFFFF",
+			"myApp",
+			"well"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"weatherApp",
+			"well-sm"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/home/jean/projects/pubtube"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/TypeScript/TypeScript.sublime-build",
+	"project": "",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 282.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

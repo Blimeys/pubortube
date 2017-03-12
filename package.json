@@ -1,0 +1,23 @@
+{
+  "name": "pubtube",
+  "version": "1.0.0",
+  "description": "Finding out time to go home",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blimeys/pubortube.git"
+  },
+  "author": "Jean Dulck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blimeys/pubortube/issues"
+  },
+  "homepage": "https://github.com/Blimeys/pubortube#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "nodemon": "^1.11.0"
+  }
+}
