@@ -192,16 +192,8 @@
 			"file": "scripts/controller.js",
 			"settings":
 			{
-				"buffer_size": 139,
+				"buffer_size": 142,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/jean/projects/beerortube/index.html",
-			"settings":
-			{
-				"buffer_size": 427,
 				"line_ending": "Unix"
 			}
 		},
@@ -209,16 +201,27 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 417,
+				"buffer_size": 411,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tubeUsers.json",
+			"settings":
+			{
+				"buffer_size": 558576,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "["
 			}
 		},
 		{
 			"file": "/home/jean/projects/beerortube/beer.js",
 			"settings":
 			{
-				"buffer_size": 263,
+				"buffer_size": 318,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -264,12 +267,13 @@
 	},
 	"expanded_folders":
 	[
-		"/home/jean/projects/pubtube"
+		"/home/jean/projects/pubtube",
+		"/home/jean/projects/pubtube/scripts"
 	],
 	"file_history":
 	[
-		"/home/jean/projects/beerortube/scripts/controller.js",
 		"/home/jean/projects/beerortube/index.html",
+		"/home/jean/projects/beerortube/scripts/controller.js",
 		"/home/jean/projects/beerortube/beer.js",
 		"/home/jean/projects/beerortube/package.json",
 		"/home/jean/projects/beerortube/TODO.ms",
@@ -375,7 +379,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -403,7 +407,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -412,15 +416,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 139,
+						"buffer_size": 142,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								117,
-								117
+								101,
+								101
 							]
 						],
 						"settings":
@@ -431,52 +435,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/home/jean/projects/beerortube/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 427,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 417,
+						"buffer_size": 411,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								295,
-								295
+								411,
+								411
 							]
 						],
 						"settings":
@@ -491,20 +467,51 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/home/jean/projects/beerortube/beer.js",
+					"buffer": 3,
+					"file": "tubeUsers.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 263,
+						"buffer_size": 558576,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								66,
-								66
+								558576,
+								558576
+							]
+						],
+						"settings":
+						{
+							"auto_name": "[",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/jean/projects/beerortube/beer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								166
 							]
 						],
 						"settings":
@@ -515,7 +522,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
