@@ -48,19 +48,16 @@ mainApp.factory('timeConverter', [function(){
           return currentTime;
         }
   }
-
-
   return {
     getTime: function timeData(){
       return getTimeConverter();
 
     }
   }
+}]);
 
-}])
-
-
-mainApp.controller('stuff', ['$scope', 'jsonQueryStations', 'timeConverter', function($scope,jsonQueryStations, timeConverter){
+mainApp.factory('busyFinder', ['$scope', 'jsonQueryStations', 'timeConverter', function($scope,jsonQueryStations, timeConverter){
+  var generator = function generate(){
   $scope.stationResult = jsonQueryStations.stationData().then(function(result){
     var findthetime = timeConverter.getTime();
     var Average = "Average";
@@ -81,4 +78,15 @@ mainApp.controller('stuff', ['$scope', 'jsonQueryStations', 'timeConverter', fun
     }
     return $scope.whatToDo = whatToDo;
   });
+  }
+  return {
+    generate: function generateIt(){
+      return generator();
+    }
+  }
+}])
+
+
+mainApp.controller('stuff', ['$scope', 'busyFinder', function($scope, busyFinder){
+ $scope.testing = busyFinder.generator();
 }]);
