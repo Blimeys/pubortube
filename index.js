@@ -3,6 +3,8 @@ var app = express();
 
 app.use('/scripts',express.static(__dirname + '/scripts'));
 
+app.use('/css',express.static(__dirname + '/css'));
+
 
 app.get('/', function(req,res){
   res.sendFile(__dirname + '/index.html')

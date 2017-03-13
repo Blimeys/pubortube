@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/stylez.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js"></script>
     <script src="/scripts/factory.js"></script>
     <script src="/scripts/controller.js"></script>
@@ -12,13 +13,15 @@
 </head>
 <body ng-app="mainApp">
 <div ng-controller="stuff" class="container">
+<div class="jumbotron">
 <input type="text">
 <h2>
-<br>
-{{ stationSelected }} is quite.
+{{ stationSelected }}
 <br>
 {{ whatToDo }}
 </h2>
+</div>
+</div>
 </div>
 </body>
 </html>
