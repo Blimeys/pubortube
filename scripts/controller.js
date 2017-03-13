@@ -7,7 +7,7 @@ mainApp.factory('jsonQueryStations', ['$filter', '$http', function($filter,$http
     stationData: function(){
     return $http.get('tubeUsers.json')
       .then(function(results){
-        var currentStation = "London Bridge";
+        var currentStation = "canada";
         return {station: $filter('filter')(results.data, {Station: currentStation })[0]};
   });
       return {
@@ -67,15 +67,18 @@ mainApp.controller('stuff', ['$scope', 'jsonQueryStations', 'timeConverter', fun
     var Average = "Average";
     console.log(findthetime);
     console.log(result.station[findthetime]);
+    console.log(result.station.Station);
     var actualLevel = result.station[findthetime];
     var averageLevel = result.station.Average;
-    console.log("station selected: " + result.station.Station);
-    console.log("this is the current passenger count: " + actualLevel);
-    console.log("this is the average passenger count: " + averageLevel);
-    if (actualLevel>averageLevel){
-      return console.log("Go to the pub");
+    $scope.stationSelected = "station selected: " + result.station.Station;
+    $scope.currentTraffic = "this is the current passenger count: " + actualLevel;
+    $scope.averageTraffic = "this is the average passenger count: " + averageLevel;
+    var whatToDo = "";
+     if (actualLevel>averageLevel){
+      return $scope.whatToDo = "Go to the pub";
     } else{
-      return console.log("Go home");
+      return $scope.whatToDo = "Go home";
     }
+    $scope.whatToDo = whatToDo;
   });
 }]);
