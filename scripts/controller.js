@@ -61,7 +61,6 @@ mainApp.factory('timeConverter', [function(){
 
 
 mainApp.controller('stuff', ['$scope', 'jsonQueryStations', 'timeConverter', function($scope,jsonQueryStations, timeConverter){
-  $scope.testCtr = 'Test World';
   $scope.stationResult = jsonQueryStations.stationData().then(function(result){
     var findthetime = timeConverter.getTime();
     var Average = "Average";
@@ -70,7 +69,7 @@ mainApp.controller('stuff', ['$scope', 'jsonQueryStations', 'timeConverter', fun
     console.log(result.station.Station);
     var actualLevel = result.station[findthetime];
     var averageLevel = result.station.Average;
-    $scope.stationSelected = "station selected: " + result.station.Station;
+    $scope.stationSelected = result.station.Station;
     $scope.currentTraffic = "this is the current passenger count: " + actualLevel;
     $scope.averageTraffic = "this is the average passenger count: " + averageLevel;
     var whatToDo = "";
@@ -79,6 +78,6 @@ mainApp.controller('stuff', ['$scope', 'jsonQueryStations', 'timeConverter', fun
     } else{
       return $scope.whatToDo = "Go home";
     }
-    $scope.whatToDo = whatToDo;
+    return $scope.whatToDo = whatToDo;
   });
 }]);
