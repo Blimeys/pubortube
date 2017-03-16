@@ -64,6 +64,7 @@ mainApp.factory('busyFinder', ['jsonQueryStations', 'timeConverter', function(js
     var stationResult = jsonQueryStations.stationData().then(function(result){
     var findthetime = timeConverter.getTime();
     var Average = "Average";
+    console.log(result);
     console.log("Current local time: " + findthetime);
     console.log("Station selected: " + result.station.Station);
     console.log("Passenger count at the station: " + result.station[findthetime]);
@@ -93,5 +94,8 @@ mainApp.factory('busyFinder', ['jsonQueryStations', 'timeConverter', function(js
 
 
 mainApp.controller('stuff', ['$scope', 'busyFinder', function($scope, busyFinder){
- $scope.testing = busyFinder.generator();
+ var dataResult = busyFinder.generator();
+ console.log(dataResult);
+ var whatNow = dataResult.stationResult;
+ $scope.testing = whatNow;
 }]);
