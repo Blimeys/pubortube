@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"wh",
+				"whatToDo"
+			],
+			[
+				"ave",
+				"averageLevel"
+			],
+			[
+				"findt",
+				"findthetime"
+			],
+			[
+				"find",
+				"findthetime"
+			],
+			[
+				"get",
+				"getTime"
+			],
+			[
+				"time",
+				"timeConverter"
+			],
+			[
+				"station",
+				"stationResult"
+			],
+			[
+				"stat",
+				"stationData"
+			],
+			[
+				"json",
+				"jsonQueryStations"
+			],
+			[
 				"geol",
 				"geolocationSvc"
 			],
@@ -76,10 +112,6 @@
 				"googleMapApiUrl"
 			],
 			[
-				"find",
-				"findNearestStation"
-			],
-			[
 				"$http",
 				"$http\tAngularJS"
 			],
@@ -136,10 +168,6 @@
 				"userID"
 			],
 			[
-				"get",
-				"getJSON"
-			],
-			[
 				"user",
 				"userUrl"
 			],
@@ -183,16 +211,7 @@
 			"file": "index.js",
 			"settings":
 			{
-				"buffer_size": 287,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "scripts/controller.js",
-			"settings":
-			{
-				"buffer_size": 142,
+				"buffer_size": 436,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -201,19 +220,44 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 411,
+				"buffer_size": 796,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "tubeUsers.json",
+			"file": "css/stylez.css",
 			"settings":
 			{
-				"buffer_size": 558576,
+				"buffer_size": 83,
 				"encoding": "UTF-8",
-				"line_ending": "Unix",
-				"name": "["
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/controller.js",
+			"settings":
+			{
+				"buffer_size": 3360,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/jean/Desktop/MilltagHome/milltag/public_html/site/media/uploads/maxmegamenu/style.css",
+			"settings":
+			{
+				"buffer_size": 26827,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scripts/factory.js",
+			"settings":
+			{
+				"buffer_size": 0,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -268,10 +312,15 @@
 	"expanded_folders":
 	[
 		"/home/jean/projects/pubtube",
+		"/home/jean/projects/pubtube/css",
+		"/home/jean/projects/pubtube/data",
 		"/home/jean/projects/pubtube/scripts"
 	],
 	"file_history":
 	[
+		"/home/jean/Desktop/MilltagHome/dbadmin/public_html/js/normalization.js",
+		"/home/jean/projects/pubtube/stationList.json",
+		"/home/jean/projects/pubtube/tubeUsers.json",
 		"/home/jean/projects/beerortube/index.html",
 		"/home/jean/projects/beerortube/scripts/controller.js",
 		"/home/jean/projects/beerortube/beer.js",
@@ -379,7 +428,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -388,15 +437,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 287,
+						"buffer_size": 436,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								111,
-								111
+								170,
+								170
 							]
 						],
 						"settings":
@@ -407,52 +456,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "scripts/controller.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 142,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								101,
-								101
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 411,
+						"buffer_size": 796,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								411,
-								411
+								711,
+								711
 							]
 						],
 						"settings":
@@ -467,38 +488,121 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "tubeUsers.json",
+					"buffer": 2,
+					"file": "css/stylez.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 558576,
+						"buffer_size": 83,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								558576,
-								558576
+								34,
+								34
 							]
 						],
 						"settings":
 						{
-							"auto_name": "[",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scripts/controller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3139,
+								3139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/jean/Desktop/MilltagHome/milltag/public_html/site/media/uploads/maxmegamenu/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 10086.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "scripts/factory.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "/home/jean/projects/beerortube/beer.js",
 					"semi_transient": false,
 					"settings":
@@ -510,8 +614,8 @@
 						"selection":
 						[
 							[
-								166,
-								166
+								116,
+								116
 							]
 						],
 						"settings":
@@ -522,7 +626,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

@@ -16,6 +16,7 @@ mainApp.factory('jsonQueryStations', ['$filter', '$http', function($filter,$http
   }
 }
 }]);
+
 mainApp.factory('timeConverter', [function(){
   var currentTime = "";
   var getTimeConverter = function findTimeStringIt (){
@@ -56,9 +57,11 @@ mainApp.factory('timeConverter', [function(){
   }
 }]);
 
-mainApp.factory('busyFinder', ['$scope', 'jsonQueryStations', 'timeConverter', function($scope,jsonQueryStations, timeConverter){
-  var generator = function generate(){
-  $scope.stationResult = jsonQueryStations.stationData().then(function(result){
+mainApp.factory('busyFinder', ['jsonQueryStations', 'timeConverter', function(jsonQueryStations, timeConverter){
+  var stationResult = {};
+  return {
+    generator: function(){
+    var stationResult = jsonQueryStations.stationData().then(function(result){
     var findthetime = timeConverter.getTime();
     var Average = "Average";
     console.log("Current local time: " + findthetime);
@@ -67,23 +70,25 @@ mainApp.factory('busyFinder', ['$scope', 'jsonQueryStations', 'timeConverter', f
     console.log("Average passenger count: " + result.station.Average)
     var actualLevel = result.station[findthetime];
     var averageLevel = result.station.Average;
-    $scope.stationSelected = result.station.Station;
-    $scope.currentTraffic = "this is the current passenger count: " + actualLevel;
-    $scope.averageTraffic = "this is the average passenger count: " + averageLevel;
+    function whatToDoNow(){
     var whatToDo = "";
      if (actualLevel>averageLevel){
-      return $scope.whatToDo = "Go to the pub";
+      return whatToDo = "pub";
     } else{
-      return $scope.whatToDo = "Go home";
+      return whatToDo = "home";
     }
-    return $scope.whatToDo = whatToDo;
+    }
+
+    stationResult.actualLevel = actualLevel;
+    stationResult.averageLevel = averageLevel;
+    stationResult.stationSelected = result.station.Station;
+    stationResult.whatToDo = whatToDoNow();
   });
+    return {
+      stationResult: stationResult
+      }
   }
-  return {
-    generate: function generateIt(){
-      return generator();
-    }
-  }
+};
 }])
 
 
