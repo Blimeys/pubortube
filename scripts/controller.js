@@ -16,6 +16,7 @@ mainApp.factory('jsonQueryStations', ['$filter', '$http', function($filter,$http
   }
 }
 }]);
+
 mainApp.factory('timeConverter', [function(){
   var currentTime = "";
   var getTimeConverter = function findTimeStringIt (){
@@ -48,37 +49,53 @@ mainApp.factory('timeConverter', [function(){
           return currentTime;
         }
   }
-
-
   return {
     getTime: function timeData(){
       return getTimeConverter();
 
     }
   }
+}]);
 
-}])
-
-
-mainApp.controller('stuff', ['$scope', 'jsonQueryStations', 'timeConverter', function($scope,jsonQueryStations, timeConverter){
-  $scope.stationResult = jsonQueryStations.stationData().then(function(result){
+mainApp.factory('busyFinder', ['jsonQueryStations', 'timeConverter', function(jsonQueryStations, timeConverter){
+  var stationResultData = {};
+  return {
+    generator: function(){
+    var stationResult = jsonQueryStations.stationData().then(function(result){
     var findthetime = timeConverter.getTime();
     var Average = "Average";
+    console.log(result);
     console.log("Current local time: " + findthetime);
     console.log("Station selected: " + result.station.Station);
     console.log("Passenger count at the station: " + result.station[findthetime]);
     console.log("Average passenger count: " + result.station.Average)
     var actualLevel = result.station[findthetime];
     var averageLevel = result.station.Average;
-    $scope.stationSelected = result.station.Station;
-    $scope.currentTraffic = "this is the current passenger count: " + actualLevel;
-    $scope.averageTraffic = "this is the average passenger count: " + averageLevel;
+    function whatToDoNow(){
     var whatToDo = "";
      if (actualLevel>averageLevel){
-      return $scope.whatToDo = "Go to the pub";
+      return whatToDo = "pub";
     } else{
-      return $scope.whatToDo = "Go home";
+      return whatToDo = "home";
     }
-    return $scope.whatToDo = whatToDo;
-  });
+    }
+
+    stationResultData.actualLevel = actualLevel;
+    stationResultData.averageLevel = averageLevel;
+    stationResultData.stationSelected = result.station.Station;
+    stationResultData.whatToDo = whatToDoNow();
+    return stationResultData;
+});
+    return {
+      stationResultData: stationResultData
+      }
+  }
+};
+}])
+
+
+mainApp.controller('stuff', ['$scope', 'busyFinder', function($scope, busyFinder){
+ var dataResult = busyFinder.generator();
+ console.log(dataResult);
+ $scope.testing = dataResult.stationResultData;
 }]);
