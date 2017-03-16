@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"what",
+				"whatToDoNow"
+			],
+			[
+				"stat",
+				"stationSelected"
+			],
+			[
+				"station",
+				"stationSelected"
+			],
+			[
+				"data",
+				"dataResult"
+			],
+			[
+				"waht",
+				"whatToDo"
+			],
+			[
+				"resul",
+				"resultAtStation"
+			],
+			[
+				"aver",
+				"averageTraffic"
+			],
+			[
+				"stt",
+				"stationSelected"
+			],
+			[
+				"sta",
+				"stationResult"
+			],
+			[
+				"avera",
+				"averageTraffic"
+			],
+			[
+				"curre",
+				"currentTraffic"
+			],
+			[
 				"wh",
 				"whatToDo"
 			],
@@ -26,14 +70,6 @@
 			[
 				"time",
 				"timeConverter"
-			],
-			[
-				"station",
-				"stationResult"
-			],
-			[
-				"stat",
-				"stationData"
 			],
 			[
 				"json",
@@ -74,10 +110,6 @@
 			[
 				"radius",
 				"radiusSettings"
-			],
-			[
-				"sta",
-				"stationFactory"
 			],
 			[
 				"locat",
@@ -188,10 +220,6 @@
 				"offlineData"
 			],
 			[
-				"curre",
-				"currentQuote"
-			],
-			[
 				"fu",
 				"function"
 			],
@@ -220,7 +248,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 796,
+				"buffer_size": 768,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -235,10 +263,13 @@
 			}
 		},
 		{
+			"contents": "var mainApp = angular.module('mainApp', []);\n\n\nmainApp.factory('jsonQueryStations', ['$filter', '$http', function($filter,$http){\n  var station = {};\n  return {\n    stationData: function(){\n    return $http.get('tubeUsers.json')\n      .then(function(results){\n        var currentStation = \"waterloo\";\n        return {station: $filter('filter')(results.data, {Station: currentStation })[0]};\n  });\n      return {\n        station: station\n      }\n  }\n}\n}]);\n\nmainApp.factory('timeConverter', [function(){\n  var currentTime = \"\";\n  var getTimeConverter = function findTimeStringIt (){\n            var hour = new Date().getHours();\n        var minute = new Date().getMinutes();\n        if (minute<16){\n          var minuteLower = 0;\n          var minuteUpper = 15;\n          if (minuteLower === 0){\n            var currentTime = hour.toString() + minuteLower.toString() + \"0-\" + hour.toString() + minuteUpper.toString();\n            return currentTime;\n          } else {\n          var currentTime = hour.toString() + minuteLower.toString() + \"-\" + hour.toString() + minuteUpper.toString();\n          return currentTime;\n          }\n        } else if (minute>15 && minute<31){\n          var minuteLower = 16;\n          var minuteUpper = 30;\n          var currentTime = hour.toString() + minuteLower.toString() + \"-\" + hour.toString() + minuteUpper.toString();\n          return currentTime;\n        } else if (minute>30 && minute<46){\n          var minuteLower = 31;\n          var minuteUpper = 45;\n          var currentTime = hour.toString() + minuteLower.toString() + \"-\" + hour.toString() + minuteUpper.toString();\n          return currentTime;\n        } else if (minute>45 && minute<=59){\n          var minuteLower = 46;\n          var minuteUpper = 59;\n          var currentTime = hour.toString() + minuteLower.toString() + \"-\" + hour.toString() + minuteUpper.toString();\n          return currentTime;\n        }\n  }\n  return {\n    getTime: function timeData(){\n      return getTimeConverter();\n\n    }\n  }\n}]);\n\nmainApp.factory('busyFinder', ['jsonQueryStations', 'timeConverter', function(jsonQueryStations, timeConverter){\n  var stationResult = {};\n  return {\n    generator: function(){\n    var stationResult = jsonQueryStations.stationData().then(function(result){\n    var findthetime = timeConverter.getTime();\n    var Average = \"Average\";\n    console.log(result);\n    console.log(\"Current local time: \" + findthetime);\n    console.log(\"Station selected: \" + result.station.Station);\n    console.log(\"Passenger count at the station: \" + result.station[findthetime]);\n    console.log(\"Average passenger count: \" + result.station.Average)\n    var actualLevel = result.station[findthetime];\n    var averageLevel = result.station.Average;\n    var stationSelected = result.station.Station;\n    var currentLevel = \"currentLevel\";\n    function whatToDoNow(){\n    var whatToDo = \"\";\n     if (actualLevel>averageLevel){\n      return whatToDo = \"pub\";\n    } else{\n      return whatToDo = \"home\";\n    }\n    }\n    whatToDo = whatToDoNow();\n    stationResult[currentLevel] = result.station[findthetime];\n    stationResult[averageLevel] = averageLevel;\n    stationResult[stationSelected] = stationSelected;\n    stationResult[whatToDo] = whatToDo;\n    console.log(stationResult);\n  });\n    return {\n      stationResult: stationResult\n      }\n  }\n};\n}])\n\n\nmainApp.controller('stuff', ['$scope', 'busyFinder', function($scope, busyFinder){\n var dataResult = busyFinder.generator();\n console.log(dataResult);\n var whatNow = dataResult.stationResult.waterloo;\n $scope.testing = whatNow;\n}]);\n",
 			"file": "scripts/controller.js",
+			"file_size": 3575,
+			"file_write_time": 131341562600357763,
 			"settings":
 			{
-				"buffer_size": 3360,
+				"buffer_size": 3575,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -252,10 +283,13 @@
 			}
 		},
 		{
+			"contents": "mainApp.factory('busyFinder', ['$scope', 'jsonQueryStations', 'timeConverter', function($scope,jsonQueryStations, timeConverter){\n  var generator = function generateResponse(){\n  $scope.stationResult = jsonQueryStations.stationData().then(function(result){\n    var findthetime = timeConverter.getTime();\n    var Average = \"Average\";\n    console.log(\"Current local time: \" + findthetime);\n    console.log(\"Station selected: \" + result.station.Station);\n    console.log(\"Passenger count at the station: \" + result.station[findthetime]);\n    console.log(\"Average passenger count: \" + result.station.Average)\n    var actualLevel = result.station[findthetime];\n    var averageLevel = result.station.Average;\n    $scope.stationSelected = result.station.Station;\n    $scope.currentTraffic = \"this is the current passenger count: \" + actualLevel;\n    $scope.averageTraffic = \"this is the average passenger count: \" + averageLevel;\n    var whatToDo = \"\";\n     if (actualLevel>averageLevel){\n      return $scope.whatToDo = \"Go to the pub\";\n    } else{\n      return $scope.whatToDo = \"Go home\";\n    }\n    return $scope.whatToDo = whatToDo;\n  });\n  }\n  return {\n    generate: function generateIt(){\n      return generator();\n    }\n  }\n}])",
 			"file": "scripts/factory.js",
+			"file_size": 0,
+			"file_write_time": 131338129182293062,
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1226,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -428,7 +462,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -444,8 +478,8 @@
 						"selection":
 						[
 							[
-								170,
-								170
+								164,
+								164
 							]
 						],
 						"settings":
@@ -456,7 +490,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -465,15 +499,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 796,
+						"buffer_size": 768,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								711,
-								711
+								751,
+								751
 							]
 						],
 						"settings":
@@ -512,7 +546,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -521,15 +555,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3360,
+						"buffer_size": 3575,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3139,
-								3139
+								3029,
+								3029
 							]
 						],
 						"settings":
@@ -537,10 +571,10 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -577,15 +611,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1226,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1226,
+								1226
 							]
 						],
 						"settings":
@@ -626,7 +660,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
