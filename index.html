@@ -14,11 +14,15 @@
 <body ng-app="mainApp">
 <div ng-controller="stuff" class="container">
 <div class="jumbotron">
-<input type="text">
+  <form>
+    <div class="form-group row">
+  <div class="col-8 input-append">
+    <input class="form-control" type="text" id="station-input" placeholder="Station name...">
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 <h2>
 {{ testing }}
-<br>
-{{ whatToDo }}
 </h2>
 </div>
 </div>

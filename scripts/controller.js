@@ -20,7 +20,7 @@ mainApp.factory('jsonQueryStations', ['$filter', '$http', function($filter,$http
 mainApp.factory('timeConverter', [function(){
   var currentTime = "";
   var getTimeConverter = function findTimeStringIt (){
-            var hour = new Date().getHours();
+          var hour = new Date().getHours();
         var minute = new Date().getMinutes();
         if (minute<16){
           var minuteLower = 0;
@@ -50,52 +50,40 @@ mainApp.factory('timeConverter', [function(){
         }
   }
   return {
-    getTime: function timeData(){
+    getTime: function(){
       return getTimeConverter();
 
     }
   }
 }]);
 
-mainApp.factory('busyFinder', ['jsonQueryStations', 'timeConverter', function(jsonQueryStations, timeConverter){
-  var stationResultData = {};
-  return {
-    generator: function(){
-    var stationResult = jsonQueryStations.stationData().then(function(result){
-    var findthetime = timeConverter.getTime();
-    var Average = "Average";
-    console.log(result);
-    console.log("Current local time: " + findthetime);
-    console.log("Station selected: " + result.station.Station);
-    console.log("Passenger count at the station: " + result.station[findthetime]);
-    console.log("Average passenger count: " + result.station.Average)
-    var actualLevel = result.station[findthetime];
-    var averageLevel = result.station.Average;
-    function whatToDoNow(){
-    var whatToDo = "";
-     if (actualLevel>averageLevel){
-      return whatToDo = "pub";
-    } else{
-      return whatToDo = "home";
-    }
-    }
+mainApp.factory('statusFinder', ['jsonQueryStations', 'timeConverter', function(jsonQueryStations, timeConverter){
+  var findTheTime = timeConverter.getTime();
+  var pub = "pub";
+  var home = "home";
+  var generator = function(){
+      return jsonQueryStations.stationData().then(function(result){
+      console.log("Current local time: " + findTheTime);
+      console.log("Station selected: " + result.station.Station);
+      console.log("Passenger count at the station: " + result.station[findTheTime]);
+      console.log("Average passenger count: " + result.station.Average)
+      if (result.station[findTheTime]>result.station.Average){
+        return pub;
+        } else{
+        return home;
+        }
 
-    stationResultData.actualLevel = actualLevel;
-    stationResultData.averageLevel = averageLevel;
-    stationResultData.stationSelected = result.station.Station;
-    stationResultData.whatToDo = whatToDoNow();
-    return stationResultData;
-});
-    return {
-      stationResultData: stationResultData
-      }
-  }
-};
+      });
+    }
+  return {
+    status: function(){
+      return generator();
+    }
+    }
 }])
 
 
-mainApp.controller('stuff', ['$scope', 'busyFinder', function($scope, busyFinder){
- var dataResult = busyFinder.generator();
- console.log(dataResult);
- $scope.testing = dataResult.stationResultData;
-}]);
+mainApp.controller('stuff', ['$scope', 'statusFinder', function($scope, statusFinder){
+ var data = statusFinder.status();
+ $scope.testing = data;
+}])
