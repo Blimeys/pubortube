@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="/css/stylez.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/stylez.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js"></script>
     <script src="/scripts/controller.js"></script>
     <script src="/scripts/factory.js"></script>
@@ -13,19 +14,16 @@
 
 </head>
 <body ng-app="stationStatus">
-<div ng-controller="stuff" class="container">
-<div class="jumbotron">
-  <form>
-    <div class="form-group row">
-  <div class="col-8 input-append">
-    <input class="form-control" type="text" id="station-input" placeholder="Station name...">
-  </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-<h2>
-{{ testing }}
-</h2>
+<div ng-controller="currentStatus" class="container">
+  {{testing}}
 </div>
+
+  <form ng-controller="autoComplete">
+  <input type="text" ng-model="selectedStation" class="form-control">
+  <br>
+  <button class="btn btn-primary" type="button" ng-click="getStation(selectedStation)">Find</button>
+  </form>
+
 </div>
 </div>
 </body>

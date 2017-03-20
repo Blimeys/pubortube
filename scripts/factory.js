@@ -3,11 +3,12 @@ var stationStatus = angular.module('stationStatus');
 stationStatus.factory('jsonQueryStations', ['$filter', '$http', function($filter,$http){
   var station = {};
   return {
-    stationData: function(){
+    stationData: function(selectedStation){
     return $http.get('tubeUsers.json')
       .then(function(results){
-        var currentStation = "waterloo";
-        return {station: $filter('filter')(results.data, {Station: currentStation })[0]};
+        var selectedStation = "waterloo";
+        console.log(selectedStation);
+        return {station: $filter('filter')(results.data, {Station: selectedStation })[0]};
   });
       return {
         station: station

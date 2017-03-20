@@ -15,5 +15,5 @@ app.get('/tubeUsers.json', function(req,res){
 
 
 app.listen(3000, function(){
-  console.log('Server started - listening on port 3000')
+  console.log('Server started on Localhost - listening on port 3000')
 })
