@@ -2,7 +2,10 @@ var stationStatus = angular.module('stationStatus', []);
 
 
 
-stationStatus.controller('currentStatus', ['$scope', 'statusFinder', 'timeConverter', function($scope, statusFinder,timeConverter) {
+stationStatus.controller('stationEntry', ['$scope', 'statusFinder', 'timeConverter', function($scope, statusFinder,timeConverter) {
+  $scope.getStation = function(selectedStation){
+    console.log(selectedStation);
+  }
     var findTheTime = timeConverter.getTime();
     statusFinder.status().then(function(result) {
         if (result.station[findTheTime] > result.station.Average) {
@@ -12,16 +15,4 @@ stationStatus.controller('currentStatus', ['$scope', 'statusFinder', 'timeConver
         }
     });
 
-}])
-
-stationStatus.controller('sendStation', ['$scope', function($scope){
-
-}])
-
-
-
-stationStatus.controller('autoComplete', ['$scope', function($scope){
-  $scope.getStation = function(selectedStation){
-    console.log(selectedStation);
-  }
 }])

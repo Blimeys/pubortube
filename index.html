@@ -14,11 +14,8 @@
 
 </head>
 <body ng-app="stationStatus">
-<div ng-controller="currentStatus" class="container">
-  {{testing}}
-</div>
 
-  <form ng-controller="autoComplete">
+  <form ng-controller="stationEntry">
   <input type="text" ng-model="selectedStation" class="form-control">
   <br>
   <button class="btn btn-primary" type="button" ng-click="getStation(selectedStation)">Find</button>
