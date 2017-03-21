@@ -6,6 +6,7 @@
   <title></title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.8/typicons.css">
     <link rel="stylesheet" href="/css/stylez.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js"></script>
     <script src="/scripts/controller.js"></script>
@@ -14,14 +15,15 @@
 
 </head>
 <body ng-app="stationStatus">
-
-  <form ng-controller="stationEntry">
+<div ng-controller="stationEntry" ng-bind-html-unsafe="html">
+  <form >
   <input type="text" ng-model="selectedStation" class="form-control">
   <br>
-  <button class="btn btn-primary" type="button" ng-click="getStation(selectedStation)">Find</button>
-  </form>
+  <button class="btn btn-primary" type="button" ng-click="getStation()">Find</button>
 
-</div>
+  </form>
+  {{stationName}}
+  {{stationState}}
 </div>
 </body>
 </html>

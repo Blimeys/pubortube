@@ -6,8 +6,6 @@ stationStatus.factory('jsonQueryStations', ['$filter', '$http', function($filter
     stationData: function(selectedStation){
     return $http.get('tubeUsers.json')
       .then(function(results){
-        var selectedStation = "waterloo";
-        console.log(selectedStation);
         return {station: $filter('filter')(results.data, {Station: selectedStation })[0]};
   });
       return {
@@ -57,13 +55,3 @@ stationStatus.factory('timeConverter', [function(){
   }
 }]);
 
-stationStatus.factory('statusFinder', ['jsonQueryStations', function(jsonQueryStations, timeConverter){
-   var generator = function(){
-      return jsonQueryStations.stationData()
-   }
-   return {
-    status: function(){
-      return generator();
-    }
-   }
-}])
