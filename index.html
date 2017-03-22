@@ -15,15 +15,35 @@
 
 </head>
 <body ng-app="stationStatus">
-<div ng-controller="stationEntry" ng-bind-html-unsafe="html">
-  <form >
-  <input type="text" ng-model="selectedStation" class="form-control">
-  <br>
-  <button class="btn btn-primary" type="button" ng-click="getStation()">Find</button>
+<span ng-controller="stationEntry">
+<div class="container">
+  <div class="row">
+        <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3">
+            <div id="imaginary_container">
+                <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Station name..." ng-model="selectedStation">
+                    <span class="input-group-addon">
+                        <button type="submit" ng-click="getStation()">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
 
-  </form>
+
+  <br>
+  <i class="{{icon}}" id="resultIcon"></i>
   {{stationName}}
   {{stationState}}
+
+  <div>
+    {{noStation}}
+  </div>
+
+</span>
 </div>
 </body>
 </html>

@@ -4,18 +4,22 @@ var stationStatus = angular.module('stationStatus', []);
 
 stationStatus.controller('stationEntry', ['$scope', 'jsonQueryStations', 'timeConverter', function($scope, jsonQueryStations, timeConverter) {
   $scope.getStation = function () {
-    var thisStation = $scope.selectedStation;
     var findTheTime = timeConverter.getTime();
+    $scope.noStation = "";
     jsonQueryStations.stationData($scope.selectedStation).then(function(result){
-          if (result.station[findTheTime] > result.station.Average) {
+          if ($scope.selectedStation == null || $scope.selectedStation == undefined){
+            $scope.noStation = "Please enter a station name";
+          } else if (result.station[findTheTime] > result.station.Average) {
             $scope.stationName = result.station.Station + " is busy";
+            $scope.icon = "typcn typcn-beer";
             console.log(result.station);
-        } else if (result.station[findTheTime] <= result.station.Average){
+          } else if (result.station[findTheTime] <= result.station.Average){
             $scope.stationName = result.station.Station + " is quiet";
+            $scope.icon = "typcn typcn-home";
             console.log(result.station);
             }
         else {
-            $scope.testing = "Cannot find station";
+            console.log(result.station);
         }
       }
     )
@@ -23,9 +27,3 @@ stationStatus.controller('stationEntry', ['$scope', 'jsonQueryStations', 'timeCo
 
 }])
 
-stationStatus.directive('myStation', function(){
-  return{
-    restrict: 'E',
-    templateUrl : 'goHome.html'
-  }
-})
