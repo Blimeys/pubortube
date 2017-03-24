@@ -25,3 +25,21 @@
     border:0;
     background:transparent;
 }
+
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4em;
+}
+
+h2 {
+  font-family: : 'Montserrat', sans-serif;
+  font-size:3em;
+}
+
+.results{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
