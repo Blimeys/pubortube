@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.8/typicons.css">
     <link rel="stylesheet" href="/css/stylez.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.2/angular.min.js"></script>
     <script src="/scripts/controller.js"></script>
     <script src="/scripts/factory.js"></script>
@@ -17,11 +18,11 @@
 </head>
 <body ng-app="stationStatus">
 <span ng-controller="stationEntry">
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="">
       <h1> Pub or tube ?</h1>
-      <div class="input-group">
+      <div class="input-group input-group-lg">
         <input type="text" class="form-control"  placeholder="Station name..." ng-model="selectedStation" >
         <span class="input-group-btn">
           <button type="submit" class="btn btn-primary" ng-click="getStation()">Search
