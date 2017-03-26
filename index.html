@@ -19,28 +19,22 @@
 <span ng-controller="stationEntry">
 <div class="container">
   <div class="row">
-        <div class="">
-        <h1> Pub or tube ?</h1>
-            <div id="imaginary_container">
-                <div class="input-group stylish-input-group col-lg-12 col-sm-12 col-xs-12">
-                    <input type="text" class="form-control"  placeholder="Station name..." ng-model="selectedStation" >
-                    <span class="input-group-addon">
-                        <button type="submit" ng-click="getStation()">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="results">
-
-
-          <h2>{{stationResults}}</h2>
-          <br>
-
-          {{stationState}}
-          <i class="{{icon}}" id="resultIcon"></i>
-        </div>
+    <div class="">
+      <h1> Pub or tube ?</h1>
+      <div class="input-group">
+        <input type="text" class="form-control"  placeholder="Station name..." ng-model="selectedStation" >
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-click="getStation()">Search
+          </button>
+        </span>
+      </div>
+    </div>
+    <div class="results">
+      <h2>{{stationResults}}</h2>
+      <br>
+      {{stationState}}
+      <i class="{{icon}}" id="resultIcon"></i>
+    </div>
   </div>
 </div>
 
