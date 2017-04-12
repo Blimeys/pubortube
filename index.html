@@ -18,34 +18,39 @@
 </head>
 <body ng-app="stationStatus">
 <span ng-controller="stationEntry">
-<div class="container-fluid">
-  <div class="row">
-    <div class="">
-      <h1> Pub or tube ?</h1>
-      <div class="input-group input-group-lg">
-        <input type="text" class="form-control"  placeholder="Station name..." ng-model="selectedStation" >
-        <span class="input-group-btn">
-          <button type="submit" class="btn btn-primary" ng-click="getStation()">Search
-          </button>
-        </span>
+<div class="container-fluid" >
+  <div class="row" >
+    <div class="col-xl-8 col-xl-offset-2 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12 col-12 " id="mainContent">
+      <div id="siteTitle">
+      <h1 class="main-title">Pub<i>TUBE</i>?  <p class="results-text">{{stationResults}}</p></h1>
+
+      <p class="subtitle">CHEAT THE CROWD, KNOW WHAT TO DO</p>
       </div>
-    </div>
-    <div class="results">
-      <h2>{{stationResults}}</h2>
-      <br>
-      {{stationState}}
+      <div id="searchBox">
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" id="searchField" placeholder="Station name..." ng-model="selectedStation" >
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" id ="searchButton" ng-click="getStation()">Search
+            </button>
+            {{stationState}}
+
+          </span>
+        </div>
+
+      </div>
+      <!-- Legacy result code
+      {{noStation}}
+      <div class="row">
+      <div class="col-xl-8 col-xl-offset-2 col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12 col-12 ">
+      {{stationResults}}<br>
       <i class="{{icon}}" id="resultIcon"></i>
-    </div>
+      </div>
+      </div>
+      -->
   </div>
 </div>
-
-
-  <br>
-
-
-  <div>
-    {{noStation}}
-  </div>
+<div>
+</div>
 
 </span>
 </div>
