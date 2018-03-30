@@ -11,10 +11,21 @@
 
 body {
   background-color: #e4f6ea;
+  /* background: url('bg.jpg');
+  	background-repeat: no-repeat;
+  	background-size: 100%; */
+    min-height:100%;
+    background:url('bg.jpg');
+    background-size:cover;
+    box-shadow:inset 0 0 0 2000px rgba(255,0,150,0.3);
 }
 #mainContent{
-  background-color: #53b23b;
-}
+   box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.2);
+   border-radius: 3px;
+   border-style:solid;
+   border-width: 1px;
+   border-color: white;
+ }
 
 
 #siteTitle {
@@ -63,7 +74,7 @@ h2 {
 .results-text {
     font-family: : 'Montserrat', sans-serif;
     font-size: .5em;
-    color: #0a1f0e;
+    color: white;
 }
 
 .results{
@@ -78,11 +89,33 @@ h2 {
 }
 #searchButton {
   border-radius: 0;
-  background-color: #0a1f0e;
+  background-color: #211e1e;
   border-color: #FFFFFF;
+  	transition: background-color 0.3s, color 0.3s;
+}
+#searchButton:hover{
+  background-color: white;
+  color: #211e1e;
 
 }
 .container-fluid{
   position: absolute;
   top: 25%;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+.container-fluid {
+
+  left:10%;
+  width: 370px;
+}
+h1 {
+  font-size: 5vh;
+}
+body {
+  background:url('bg-small.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
 }
